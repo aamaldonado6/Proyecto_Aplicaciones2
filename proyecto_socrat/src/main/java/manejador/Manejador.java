@@ -28,16 +28,11 @@ public class Manejador {
             if (session.isOpen()) {
                 if (message.equals("Alvaro")){
 
-                    session.getRemote().sendString("<h1>HOLA: "+message+" Completa el siguiente formulario </h1>\n" +
-                            "<input type=\"radio\" name=\"transporte\" value=\"1\">Coche\n" +
-                            "\n" +
-                            "<br>\n" +
-                            "\n" +
-                            "<input type=\"radio\" name=\"transporte\" value=\"2\">Avión\n" +
-                            "\n" +
-                            "<br>\n" +
-                            "\n" +
-                            "<input type=\"radio\" name=\"transporte\" value=\"3\">Tren");
+                    session.getRemote().sendString("<nav class='navbar bg-success'>"+
+                                                      "<ul class='list-inline'>"+
+                                                        "<li class='list-inline-item'>"+
+                                                            "<h3 class='text-white' id='he'>"+message+"</h3>"+
+                                                        "</li></ul></nav>");
 
                 }
             }
