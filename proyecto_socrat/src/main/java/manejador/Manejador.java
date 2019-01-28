@@ -9,6 +9,7 @@ import org.eclipse.jetty.websocket.api.annotations.WebSocket;
 @WebSocket
 public class Manejador {
 
+
     @OnWebSocketConnect
     public void onConnect(Session session) throws Exception {
         System.out.println("Connected");

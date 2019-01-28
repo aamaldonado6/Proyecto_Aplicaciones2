@@ -1,5 +1,5 @@
 
-  // Initialize Firebase
+// Inicializar Firebase
 var config = {
   apiKey: "AIzaSyCXt200Wt9hb7cfANBIK5MM-B8fzmF7Yw4",
   authDomain: "aplicacionessocrative.firebaseapp.com",
@@ -19,6 +19,7 @@ var mensajeRef = dbRef.ref('message')
 mensajeRef.once('value').then(function(snapshot){
   app.innerText = snapshot.val()
 })*/
+
 //obtener los ids
 function getID(id){
   return document.getElementById(id).value;
@@ -75,10 +76,10 @@ function table(id,name,description){
 
 function mostrarDatos(){
   var dbRef= firebase.database();
-    var task = dbRef.ref('task');
+    var task = dbRef.ref('task').child('hola');
     task.on("child_added",function(data){
         var taskvalue = data.val();
-        var result= table(taskvalue.id, taskvalue.name,taskvalue.description);
+        var result= table(taskvalue.respuesta1,taskvalue.respuesta2,taskvalue.pregunta);
         innerHTML("loadTask",result);
     });
     
@@ -145,3 +146,5 @@ function guardarRespuesta(){
         alert("Datos guardados");
 
 }
+///////////////profesor/////////////////////"
+///crear cursos
