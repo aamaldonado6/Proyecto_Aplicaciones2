@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="org.hibernate:hibernate-tools:3.2.0.ga" type="repository">
+    <properties maven-id="org.hibernate:hibernate-tools:3.2.0.ga" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/hibernate-tools-3.2.0.ga.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/bsh-2.0b4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/freemarker-2.3.8.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jtidy-r8-20060801.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
