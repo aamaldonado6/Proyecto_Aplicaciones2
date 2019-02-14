@@ -1,8 +1,7 @@
 package app.manejador.CasosProfesor;
 
 import app.JPAUtil;
-import entites.Curso;
-import entites.Profesor;
+import entites.*;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
@@ -22,8 +21,11 @@ public class IntProfesor {
     String nombreFP="error";
     List<Profesor> listaPro = new ArrayList<>();
     List<Curso> listaCur = new ArrayList<>();
-
-    String lup="";
+    int lup=0;
+    Curso curso;
+    Preguntas preguntas;
+    Respuestas respuestas;
+    Alumno alumno;
     public String buscarUsuario(String op){
         String[] parts = op.split("-");
         String part1 = parts[0];
@@ -37,7 +39,7 @@ public class IntProfesor {
                     for (Profesor p : listaPro) {
 
                         if (p.getNombre().equals(part2)){
-                           this.nombreFP=p.getNombre();}
+                           this.nombreFP=p.getNombre()+"-"+p.getIdprofesor();}
                         }
                     if (nombreFP.equals("error")){
                         entity.close();
@@ -48,31 +50,85 @@ public class IntProfesor {
                     break;
 
                 case 2:
-                    System.out.println("hola");
-                    Query query2=entity.createQuery("SELECT c FROM Curso c INNER JOIN Profesor p ON c.id_profesor=p.idprofesor where p.nombre='Eva'");
+                    Query query2=entity.createQuery("SELECT c FROM Curso c INNER JOIN Profesor p ON c.id_profesor=p.idprofesor where p.nombre='"+part2+"'");
                     this.listaCur =query2.getResultList();
                     this.nombreFP="";
                     for (Curso c : listaCur) {
-                        this.nombreFP=nombreFP+"<label><input type='radio' name='optcur' value='"+c.getNombre_curso()+"'>"+c.getNombre_curso()+"</label>";
+                        this.nombreFP=nombreFP+"<label><input type='radio' name='optcur' value='"+c.getIdcurso()+"'>"+c.getNombre_curso()+"</label>";
+                        this.lup=c.getId_profesor();
                     }
 
                     if (nombreFP.equals("error")){
                         entity.close();
                     }
-                    this.nombreFP="2-"+nombreFP;
+                    String l =String.valueOf(lup);
+                    this.nombreFP="2-"+nombreFP+"-"+l;
 
                     break;
                 case 3:
-                    System.out.println("Digite el id del profesor a actualizar:");
-
-
+                    String part3 = parts[2];
+                    System.out.println(part3+"-EEEEE");
+                    int idpro=Integer.parseInt(part3);
+                    curso=Curso.getInstancia();
+                    curso.setIdcurso(null);
+                    curso.setId_profesor(idpro);
+                    curso.setNombre_curso(part2);
+                    entity.getTransaction().begin();
+                    entity.persist(curso);
+                    entity.getTransaction().commit();
+                    System.out.println("Curso registrado.."+part2);
+                    nombreFP="";
                     break;
                 case 4:
-                    System.out.println("Digite el id del profesor a eliminar:");
+                    int pp = Integer.parseInt(parts[2]);
+                    preguntas=Preguntas.getInstancia();
+                    preguntas.setIdpreguntas(null);
+                    preguntas.setId_curso(pp);
+                    preguntas.setPregunta(part2);
+                    entity.getTransaction().begin();
+                    entity.persist(preguntas);
+                    entity.getTransaction().commit();
+                    System.out.println("Pregunta registradas..");
 
-                    break;
-                case 5:entity.close();
+                    /*////respuestas
+                    respuestas=Respuestas.getInstancia();
+                    respuestas.setIdrespuestas(null);
+                    respuestas.setId_pregunta();
+                    respuestas.setRespuesta();
+                    entity.getTransaction().begin();
+                    entity.persist(respuestas);
+                    entity.getTransaction().commit();
+                    */
+                    entity.close();
                     JPAUtil.shutdown();
+                    break;
+                case 5:
+                    alumno= Alumno.getInstancia();
+                    alumno.setIdalumno(null);
+                    alumno.setNombre(part2);
+                    alumno.setRol("alumno");
+                    int pc =Integer.parseInt(parts[2]);
+                    alumno.setId_curso(pc);
+                    entity.getTransaction().begin();
+                    entity.persist(alumno);
+                    entity.getTransaction().commit();
+                    System.out.println("Alumno registrado.."+part2);
+                    nombreFP="1-"+part2+"-"+parts[2];
+                    break;
+                case 6:
+                    Query query3=entity.createQuery("SELECT c FROM Curso c");
+                    this.listaCur =query3.getResultList();
+                    this.nombreFP="";
+                    for (Curso c : listaCur) {
+                        this.nombreFP=nombreFP+"<label><input type='radio' name='optcurA' value='"+c.getIdcurso()+"'>"+c.getNombre_curso()+"</label>";
+                    }
+
+                    if (nombreFP.equals("error")){
+                        entity.close();
+                    }
+                    String lsa =String.valueOf(lup);
+                    this.nombreFP="2-"+nombreFP+"-"+lsa;
+                    System.out.println("cursos Usuario"+nombreFP);
                     break;
 
                 default:

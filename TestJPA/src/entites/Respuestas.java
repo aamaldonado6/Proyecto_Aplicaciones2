@@ -13,6 +13,16 @@ public class Respuestas {
     @Column
     private int id_pregunta;
 
+    private static Respuestas instancia;
+    private Respuestas() {
+    }
+    public static Respuestas getInstancia(){
+        if(instancia==null){
+            instancia= new Respuestas();
+        }
+        return instancia;
+    }
+
     public Long getIdrespuestas() {
         return idrespuestas;
     }

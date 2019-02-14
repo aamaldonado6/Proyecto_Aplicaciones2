@@ -13,6 +13,17 @@ public class Curso {
     @Column
     private int id_profesor;
 
+    private static Curso instancia;
+    private Curso() {
+    }
+    public static Curso getInstancia(){
+        if(instancia==null){
+            instancia= new Curso();
+        }
+        return instancia;
+    }
+
+
     public Long getIdcurso() {
         return idcurso;
     }

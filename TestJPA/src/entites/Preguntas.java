@@ -13,6 +13,16 @@ public class Preguntas {
     @Column
     private int id_curso;
 
+    private static Preguntas instancia;
+    private Preguntas() {
+    }
+    public static Preguntas getInstancia(){
+        if(instancia==null){
+            instancia= new Preguntas();
+        }
+        return instancia;
+    }
+
     public Long getIdpreguntas() {
         return idpreguntas;
     }

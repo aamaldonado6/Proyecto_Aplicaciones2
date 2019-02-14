@@ -29,17 +29,17 @@ Vue.component('profesor',{
                             </div>
                             <div class="form-group">
                                 <input type="number" id="idnumres" placeholder="numero de respuestas" class="form-control">
-                                <button class="btn btn-primary" onclick="cantidadRespuestas()">Crear respuestas</button>
-                                <button class="btn btn-primary" onclick="guardarRespuestaPro()">Cresssar respuestas</button>
+                                <button class="btn btn-primary" @click="cantidadRespuestas()">Crear respuestas</button>
+                            
                             </div>
                             <hr>
                             <div class="form-group">
-                                <input type="text" id="guardarpregunta" placeholder="Escriba la pregunta" class="form-control">
+                                <input type="text" id="guardarpregunta" v-model="nuevaPregunta" placeholder="Escriba la pregunta" class="form-control">
                             </div>
                             <div class="form-group" id="numerorespuestas">
                             </div>
                             <div class="form-group">
-                                <button class="btn btn-success" onclick="">
+                                <button class="btn btn-success" @click="enviarRespuestasP()"">
                                     <i class="fas fa-plus-circle"></i>
                                     Enviar respuestas
                                 </button>
@@ -49,21 +49,7 @@ Vue.component('profesor',{
                     </div>
 
                 </div>
-                <div class="col-lg-6">
-                    <table class="table table-bordered text-center">
-                        <thead class="thead-dark">
-                        <tr>
-                            <th>Name</th>
-                            <th>Descrip</th>
-                            <th></th>
-                            <th></th>
-                        </tr>
-
-                        </thead>
-                        <tbody id="loadTask"></tbody>
-                    </table>
-
-                </div>
+                
             </div>
 
         </div>
@@ -71,7 +57,8 @@ Vue.component('profesor',{
     `,
     data(){
         return{
-            nuevoCursoP: ''
+            nuevoCursoP: '',
+            nuevaPregunta:''
 
         }
     },
@@ -81,6 +68,33 @@ Vue.component('profesor',{
         },
         crearNC(){
             registrarNcurso("3-"+this.nuevoCursoP);
+        },
+        cantidadRespuestas(){
+            var idnumres = document.getElementById("idnumres").value;
+            if (idnumres.length==0) {
+                alert("Elemento vacio");
+            }else{
+                for (var i = 1; i <= idnumres; i++) {
+                    this.innerHTMLPre("numerorespuestas",'<input type="text" name="cantidaRes" placeholder="Escriba la respuesta" class="form-control">');
+                }
+
+            }},
+        innerHTMLPre(id,result){
+                return document.getElementById(id).innerHTML+=result;
+            },
+        enviarRespuestasP(){
+            var resultado=[];
+            var idnumres=document.getElementsByName("optcur");
+            for(var i=0;i<idnumres.length;i++)
+            {
+                if(idnumres[i].checked)
+                    resultado.push(idnumres[i].value);
+            }
+            var arrayData = resultado;
+            console.log("id-curso:!:"+arrayData);
+            registrarPreguntasResp(this.nuevaPregunta,arrayData);
+
+
         }
 
     }

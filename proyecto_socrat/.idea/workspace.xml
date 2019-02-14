@@ -2,17 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9b190951-c29d-4eea-84d6-c1c41b195500" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../TestJPA/.idea/libraries/com_sparkjava_spark_core_2_7_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TestJPA/.idea/libraries/com_sparkjava_spark_core_2_7_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestJPA/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TestJPA/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../TestJPA/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TestJPA/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestJPA/out/production/TestJPA/META-INF/TestJPA.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestJPA/out/production/TestJPA/app/MainApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/../TestJPA/out/production/TestJPA/app/MainApp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestJPA/src/app/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/../TestJPA/src/app/MainApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TestJPA/out/production/TestJPA/app/manejador/CasosProfesor/IntProfesor.class" beforeDir="false" afterPath="$PROJECT_DIR$/../TestJPA/out/production/TestJPA/app/manejador/CasosProfesor/IntProfesor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TestJPA/out/production/TestJPA/entites/Curso.class" beforeDir="false" afterPath="$PROJECT_DIR$/../TestJPA/out/production/TestJPA/entites/Curso.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TestJPA/src/app/manejador/CasosProfesor/IntProfesor.java" beforeDir="false" afterPath="$PROJECT_DIR$/../TestJPA/src/app/manejador/CasosProfesor/IntProfesor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TestJPA/src/entites/Curso.java" beforeDir="false" afterPath="$PROJECT_DIR$/../TestJPA/src/entites/Curso.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TestJPA/web/js/Vue/Profesor.js" beforeDir="false" afterPath="$PROJECT_DIR$/../TestJPA/web/js/Vue/Profesor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TestJPA/web/js/Vue/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/../TestJPA/web/js/Vue/router.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webSocra/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/webSocra/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webSocra/profesor/profesor.js" beforeDir="false" afterPath="$PROJECT_DIR$/webSocra/profesor/profesor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webSocra/socket.js" beforeDir="false" afterPath="$PROJECT_DIR$/webSocra/socket.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -24,11 +21,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webSocra/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="34" column="108" selection-start-line="34" selection-start-column="108" selection-end-line="34" selection-end-column="108" />
+            <state relative-caret-position="178">
+              <caret line="103" column="24" selection-start-line="103" selection-start-column="24" selection-end-line="103" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -36,8 +33,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webSocra/profesor/profesor.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="408">
+              <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -47,11 +44,11 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/webSocra/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1037">
-              <caret line="61" column="41" selection-start-line="61" selection-start-column="41" selection-end-line="61" selection-end-column="41" />
+            <state relative-caret-position="390">
+              <caret line="138" column="57" lean-forward="true" selection-start-line="138" selection-start-column="57" selection-end-line="138" selection-end-column="57" />
             </state>
           </provider>
         </entry>
@@ -73,10 +70,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
               <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
-              <folding>
-                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -84,7 +77,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/manejador/Manejador.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
+            <state relative-caret-position="357">
               <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -101,6 +94,14 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>descr</find>
+      <find>name</find>
+      <find>che</find>
+      <find>resultado</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -139,7 +140,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -188,13 +188,14 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548658939885" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../TestJPA" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -243,16 +244,21 @@
       <workItem from="1548624857700" duration="7563000" />
       <workItem from="1549857930005" duration="116000" />
       <workItem from="1549865247523" duration="3675000" />
+      <workItem from="1550153120640" duration="114000" />
+      <workItem from="1550153328017" duration="1040000" />
+      <workItem from="1550154676212" duration="79000" />
+      <workItem from="1550155001365" duration="118000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15841000" />
+    <option name="totallyTimeSpent" value="17192000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15355521" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16263238" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -338,13 +344,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/webSocra/socket.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/manejador/Manejador.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
+        <state relative-caret-position="357">
           <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webSocra/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="103" column="24" selection-start-line="103" selection-start-column="24" selection-end-line="103" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webSocra/profesor/profesor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -353,33 +380,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/webSocra/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1037">
-          <caret line="61" column="41" selection-start-line="61" selection-start-column="41" selection-end-line="61" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webSocra/profesor/profesor.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webSocra/socket.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webSocra/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="34" column="108" selection-start-line="34" selection-start-column="108" selection-end-line="34" selection-end-column="108" />
+        <state relative-caret-position="390">
+          <caret line="138" column="57" lean-forward="true" selection-start-line="138" selection-start-column="57" selection-end-line="138" selection-end-column="57" />
         </state>
       </provider>
     </entry>

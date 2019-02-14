@@ -12,7 +12,26 @@ public class Alumno {
     private String nombre;
     @Column
     private String rol;
+    @Column
+    private int id_curso;
 
+    private static Alumno instancia;
+    private Alumno() {
+    }
+    public static Alumno getInstancia(){
+        if(instancia==null){
+            instancia= new Alumno();
+        }
+        return instancia;
+    }
+
+    public int getId_curso() {
+        return id_curso;
+    }
+
+    public void setId_curso(int id_curso) {
+        this.id_curso = id_curso;
+    }
 
     public Long getIdalumno() {
         return idalumno;
