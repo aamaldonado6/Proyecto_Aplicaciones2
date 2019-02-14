@@ -4,7 +4,8 @@
     var output;
     function init() {
          output = document.getElementById("output");
-          testWebSocket(); }
+        testWebSocket();
+        }
 
     function testWebSocket() {
           websocket = new WebSocket(wsURI);

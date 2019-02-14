@@ -1,16 +1,9 @@
 
 //guardar nuevo curso
 function insertarDatospr(){
-  var nombrecur = getID("nombrecur");
-  if (nombrecur.length==0) {
-      alert("Elemento vacio");
-  }else{
-    firebase.database().ref('academia/profesor/cursos/'+nombrecur).set({
-    nombrecur: nombrecur});
-    alert("Datos cuardados");
-    inputsTask("nombrecur","");
 
-  }}
+
+  }
 
 //obtener datos cursos
 function mostrarCursos(){
