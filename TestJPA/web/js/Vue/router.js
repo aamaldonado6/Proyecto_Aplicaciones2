@@ -1,6 +1,6 @@
 
 //var wsURI = "ws://echo.websocket.org";
-var wsURI = "ws://localhost:4567/echo"
+var wsURI = "ws://localhost:4567/profesor"
 var output;
 var usP;
 var arregloDeSubCadenas;
@@ -19,6 +19,7 @@ function registrarPreguntasResp(preg, idMateria) {
         resultado2.push(idnumres2[i].value);
     }
     var arrayData2 = resultado2;
+
 
     ms="4-"+preg+"-"+idMateria+"-"+arrayData2[0]+"-"+arrayData2[1]+"-"+arrayData2[3];
     doSend(ms)
@@ -40,7 +41,6 @@ function registrarNcurso(nc) {
 
 }
 function  iniciarUsuario(us){
-    this.output = document.getElementById("output");
     this.usP=us;
     websocket = new WebSocket(this.wsURI);
     websocket.onopen = onOpen;
@@ -64,7 +64,7 @@ function onMessage(evt) {
     console.log(intA);
     switch(intA) {
         case 1:
-            writeUsuario('<span style="color: coral">Bienvenid@:<h3 id=nopro style="color: cadetblue;">'+arregloDeSubCadenas[1]+"-"+arregloDeSubCadenas[2]+ '</h3></span>');
+            writeUsuario('<span style="color: darkorange">Bienvenid@:<h3 id=nopro style="color: cornsilk;">'+arregloDeSubCadenas[1]+'</h3></span>');
             break;
         case 2:
            WriteCrusos(arregloDeSubCadenas[1]);
@@ -80,9 +80,11 @@ function onError(evt) {
   writeToScreen('<span style="color: red;">ERROR:' + evt.data + '</span>'); }
 
 function doSend(message) {
-    console.log("envia mensaje:"+message);
- // writeToScreen("SENT: " + message);
-  websocket.send(message); }
+    console.log("envia mensaje!!!:");
+    console.log(message);
+    var json=JSON.stringify(message);
+
+    websocket.send(json); }
 
 function WriteCrusos(message) {
     this.output = document.getElementById("cursostt");
@@ -95,8 +97,8 @@ function writeUsuario(message) {
     var pre = document.createElement("p");
     pre.style.wordWrap = "break-word";
     pre.innerHTML = message;
-    output.appendChild(pre);
-    cargarCursos();
+    document.getElementById("nombrepro").appendChild(pre);
+    //cargarCursos();
 }
 function writeToScreen(message) {
   var pre = document.createElement("table");

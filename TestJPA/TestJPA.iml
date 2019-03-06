@@ -38,5 +38,6 @@
     <orderEntry type="library" name="mysql:mysql-connector-java:8.0.14" level="project" />
     <orderEntry type="library" name="org.hibernate:hibernate-core:5.2.18.Final" level="project" />
     <orderEntry type="library" name="com.sparkjava:spark-core:2.7.2" level="project" />
+    <orderEntry type="library" name="com.google.code.gson:gson:2.8.5" level="project" />
   </component>
 </module>

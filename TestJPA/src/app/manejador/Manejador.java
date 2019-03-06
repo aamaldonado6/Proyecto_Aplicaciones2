@@ -2,12 +2,14 @@ package app.manejador;
 
 import app.JPAUtil;
 import app.manejador.CasosProfesor.IntProfesor;
+import com.google.gson.Gson;
 import entites.Profesor;
 import org.eclipse.jetty.websocket.api.Session;
 import org.eclipse.jetty.websocket.api.annotations.OnWebSocketClose;
 import org.eclipse.jetty.websocket.api.annotations.OnWebSocketConnect;
 import org.eclipse.jetty.websocket.api.annotations.OnWebSocketMessage;
 import org.eclipse.jetty.websocket.api.annotations.WebSocket;
+import org.json.JSONObject;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
@@ -21,7 +23,9 @@ public class Manejador {
 
     @OnWebSocketConnect
     public void onConnect(Session session) throws Exception {
-        System.out.println("Connected");
+        String userName="Profesor"+IntProfesor.userNumber.incrementAndGet();
+        IntProfesor.userNameMap.put(session,userName);
+        System.out.println("Connected="+userName);
     }
 
     @OnWebSocketClose
@@ -32,12 +36,10 @@ public class Manejador {
 
     @OnWebSocketMessage
     public void onMessage(Session session, String  message) throws IOException {
+
         System.out.println(message+"--RESPUESTA");
         IntProfesor ip= IntProfesor.getInstancia();
-        /*for (Object p : ip.buscarUsuario(op)){
-          cadenatt=cadenatt+"<tr><td>"+ip.buscarUsuario(op)+"</td></tr>";
-        }*/
-        session.getRemote().sendString(ip.buscarUsuario(message));
+        session.getRemote().sendString(ip.datosProfesor(ip.userNameMap.get(session),message));
 
     }
 }

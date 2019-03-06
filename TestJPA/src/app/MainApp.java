@@ -1,6 +1,7 @@
 package app;
 
 import app.manejador.Manejador;
+import app.manejador.ManejadorAlumno;
 import entites.Producto;
 import entites.Profesor;
 
@@ -16,7 +17,8 @@ import static spark.Spark.webSocket;
 public class MainApp {
     public static void main(String[] args) {
 
-        webSocket("/echo", Manejador.class);
+        webSocket("/profesor", Manejador.class);
+        webSocket("/alumno", ManejadorAlumno.class);
         init();
 
     }}

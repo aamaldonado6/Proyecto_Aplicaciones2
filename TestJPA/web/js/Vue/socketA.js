@@ -12,7 +12,7 @@ function testWebSocket() {
     websocket.onclose = onClose;
     websocket.onmessage = onMessage;
     websocket.onerror = onError; }
-function registrarPreguntasResp(preg, idMateria) {
+function sregistrarPreguntasResp(preg, idMateria) {
     var resultado2=[];
     var idnumres2=document.getElementsByName("cantidaRes");
     for(var i=0;i<idnumres2.length;i++)
@@ -82,7 +82,7 @@ function onMessage(evt) {
 function onError(evt) {
     writeToScreen('<span style="color: red;">ERROR:' + evt.data + '</span>'); }
 
-function doSend(message) {
+function sdoSend(message) {
     console.log("envia mensaje:"+message);
     // writeToScreen("SENT: " + message);
     websocket.send(message); }

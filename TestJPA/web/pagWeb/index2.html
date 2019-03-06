@@ -3,119 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <title>webSocrative</title>
-    <meta name="description" content="Pruebas">
-    <meta name="author" content="@pruebaMaster">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-    <script src="socket.js"></script>
-</head> 
-  <body onload="mostrarCursos()"> 
-    <h2>Websocket Test</h2> 
-    <div id="output"></div>
-    <br>
-    <br>
-    <br>
-
-    <div id="app">
-      
-    </div>
-    <div class="container">
-      <div class="row mt-4">
-        <div class="col-lg-6">
-          <div class="card">
-            <div class="card-body">
-                  <div class="container">
-                      <h3>Profesor:</h3>
-                      <h4 id=nombrepro></h4>
-                      <hr/>
-                      <div class="form-group">
-                        <label>Ingrese un nuevo curso o seleccione uno existente en la siguiente selección</label>
-                        <input type="text" class="form-control" id="nombrecur" placeholder="Nombre del nuevo curso">
-                        <button class="btn btn-primary" onclick="insertarDatospr()">Crear nuevo curso</button> 
-                      </div>
-                      <div class="form-group">
-                        <label>Seleccione el curso:</label>
-                        <form class="form-control" id="cursostt">
-                          
-                        </form>
-                      </div>
-                      
-                  </div>
-                  <br>
-              <div class="card-title">
-                <h5>Ingresar numero de respuestas para la pregunta</h5>
-              </div>
-              <div class="form-group">
-                <input type="number" id="idnumres" placeholder="numero de respuestas" class="form-control">
-                <button class="btn btn-primary" onclick="cantidadRespuestas()">Crear respuestas</button>
-                <button class="btn btn-primary" onclick="guardarRespuestaPro()">Cresssar respuestas</button>
-              </div>
-              <hr>
-              <div class="form-group">
-                <input type="text" id="guardarpregunta" placeholder="Escriba la pregunta" class="form-control">
-              </div>
-              <div class="form-group" id="numerorespuestas">
-              </div>
-              <div class="form-group">
-                <button class="btn btn-success" onclick="insertarDatos()">
-                  <i class="fas fa-plus-circle"></i>
-                  add task
-                </button>
-                
-              </div>
-            </div>
+</head>
+  <body onload="">
+  <div>
+      <div id="page-container">
+          <div id="header-container" style="background-color: #8cb4d2">
+              <p id=nombrepro class="text-center" style="color: cornsilk;padding-top: 1em"></p>
           </div>
-          
-        </div>
-        <div class="col-lg-6">
-          <table class="table table-bordered text-center">
-            <thead class="thead-dark">
-              <tr>
-                <th>Name</th>
-                <th>Descrip</th>
-                <th></th>
-                <th></th>
-              </tr>
-              
-            </thead>
-            <tbody id="loadTask"></tbody>
-          </table>
-          
-        </div>
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                  <div class="navbar-nav">
+                      <button class="btn btn-sm btn-outline-secondary" type="button">
+                          <a class="nav-item nav-link active" href="#">Multi opcion </a>
+                      </button>
+                      <button class="btn btn-sm btn-outline-secondary" type="button">
+                          <a class="nav-item nav-link active" href="#">Verdadero/Falso </a>
+                      </button>
+                      <button class="btn btn-sm btn-outline-secondary" type="button">
+                          <a class="nav-item nav-link active" href="#">Respuesta corta </a>
+                      </button>
+                  </div>
+              </div>
+          </nav>
       </div>
-      
-    </div>
-
-
-    <div class="container" class="id">
-      <div id="preguntas">
-          
+      <div id="cuerpo" style="padding-top: 7em" class="card text-center">
+          <div class="row">
+              <div class="col-sm-4">
+                  <div class="card">
+                      <div class="card-body">
+                          <i class="fas fa-check-square"></i>
+                          <h5 class="card-title">Opcion de pregunta</h5>
+                          <a href="#" class="btn btn-primary">Multi opcion</a>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-sm-4">
+                  <div class="card">
+                      <div class="card-body">
+                          <i class="fas fa-stream"></i>
+                          <h5 class="card-title">Opcion de pregunta</h5>
+                          <a href="#" class="btn btn-primary">Verdadero/Falso</a>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-sm-4">
+                  <div class="card">
+                      <div class="card-body">
+                          <i class="fas fa-file-signature"></i>
+                          <h5 class="card-title">Opcion de pregunta</h5>
+                          <a href="#" class="btn btn-primary">Respuesta corta</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+</div>
       </div>
-      <div class="form-group">
-                <button class="btn btn-success" onclick="guardarRespuesta()">
-                  <i class="fas fa-plus-circle"></i>
-                  Guardar Respuesta
-                </button>
-                
-        </div>
-    </div>
-    <div id="resultado"></div>
-    
+  <form id="form">
+      <input type="text" placeholder="correo">
 
+  </form>
+  <button id="btn">Agrega</button>
+  <script>
+      $("#btn").addEventListener("click",function () {
+          var input=document.createElement("input");
+          input.setAttribute("type","text");
+          $("#form").appendChild(input);
+          console.log(input);
+      })
+        function $(selector) {
+            return document.querySelector(selector);
 
-
-    <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase.js"></script>
-    <script type="text/javascript" src="index.js"></script>
-    <script type="text/javascript" src="profesor/profesor.js"></script>
-
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>  
+        }
+  </script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
   </body>
-     
+
 </html>

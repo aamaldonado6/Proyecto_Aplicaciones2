@@ -7,13 +7,15 @@ Vue.component('loginPro',{
     data(){
         return{
             nuevoUsuarioP: '',
-
         }
     },
     methods:{
         initUsuario() {
+            var usuario=new Object();
 
-           iniciarUsuario("1-"+this.nuevoUsuarioP);
+            usuario.cod=1;
+            usuario.us=this.nuevoUsuarioP;
+           iniciarUsuario(usuario);
            this.goBack();
         },goBack () {
             window.history.length > 1
