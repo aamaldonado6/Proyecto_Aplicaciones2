@@ -12,6 +12,8 @@ public class Respuestas {
     private String respuesta;
     @Column
     private int id_pregunta;
+    @Column
+    private String codres;
 
     private static Respuestas instancia;
     private Respuestas() {
@@ -21,6 +23,14 @@ public class Respuestas {
             instancia= new Respuestas();
         }
         return instancia;
+    }
+
+    public String getCodres() {
+        return codres;
+    }
+
+    public void setCodres(String codres) {
+        this.codres = codres;
     }
 
     public Long getIdrespuestas() {
@@ -49,7 +59,7 @@ public class Respuestas {
 
     @Override
     public String toString() {
-        return "Producto [id=" + idrespuestas + ", respuesta=" + respuesta + ", id_pregunta=" + id_pregunta + "]";
+        return "Producto [id=" + idrespuestas + ", respuesta=" + respuesta + ", id_pregunta=" + id_pregunta + ", codres=" + codres + "]";
     }
 
 }

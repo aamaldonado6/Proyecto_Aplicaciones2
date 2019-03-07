@@ -12,7 +12,6 @@ Vue.component('loginPro',{
     methods:{
         initUsuario() {
             var usuario=new Object();
-
             usuario.cod=1;
             usuario.us=this.nuevoUsuarioP;
            iniciarUsuario(usuario);

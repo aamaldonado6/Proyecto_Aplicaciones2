@@ -12,6 +12,8 @@ public class Preguntas {
     private String pregunta;
     @Column
     private int id_curso;
+    @Column
+    private String codpre;
 
     private static Preguntas instancia;
     private Preguntas() {
@@ -21,6 +23,14 @@ public class Preguntas {
             instancia= new Preguntas();
         }
         return instancia;
+    }
+
+    public String getCodpre() {
+        return codpre;
+    }
+
+    public void setCodpre(String codpre) {
+        this.codpre = codpre;
     }
 
     public Long getIdpreguntas() {
@@ -49,7 +59,7 @@ public class Preguntas {
 
     @Override
     public String toString() {
-        return "Preguntas [id=" + idpreguntas + ", pregunta=" + pregunta + ", id_curso=" + id_curso + "]";
+        return "Preguntas [id=" + idpreguntas + ", pregunta=" + pregunta + ", id_curso=" + id_curso + ", codpre=" + codpre + "]";
     }
 
 }
